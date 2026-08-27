@@ -1,31 +1,945 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>WEB RENDANG</title>
-        <link rel="stylesheet" href="style.css">
-</head>
-    <body>
-        <h1 class="judul">website penghasil cuan</h1>
-     <hr>
-        <h2>web cuan tercepat</h2>   
-        <p>gajian setiap hari</p>
-        <p>dari rumah bisa cuan</p>
-    <hr>
-        <h3>promo menarik di setiap hari</h3>
-    <ul>
-        <li>xtra withdraw</li>
-        <li>bonus harian</li>
-        <li>freebet</li>
-    </ul>
-    <hr>
-         <h4>dibawah ini linknya</h4>
-         <a href="https://youtube.com">youtube</a>
-         <img src="DSAFS.JPG" alt="DSAFS"
-    <footer>
-        <p>© 2026 website rendang</p>
-    </footer>
-,<style>
+<html lang="id">
 
-</style>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WEB PENGHASIL CUAN</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           BODY
+        ========================= */
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #220000 0%,
+                    #100000 35%,
+                    #050505 75%,
+                    #000 100%
+                );
+
+            color: white;
+
+            line-height: 1.6;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           BACKGROUND BADAI
+        ========================= */
+
+        .storm {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            z-index: -10;
+
+            pointer-events: none;
+
+            background:
+                radial-gradient(
+                    ellipse at 15% 30%,
+                    rgba(150, 0, 0, 0.25),
+                    transparent 40%
+                ),
+
+                radial-gradient(
+                    ellipse at 85% 60%,
+                    rgba(150, 0, 0, 0.25),
+                    transparent 40%
+                );
+
+            animation: stormMove 8s infinite alternate;
+        }
+
+
+        @keyframes stormMove {
+
+            0% {
+                filter: brightness(0.7);
+            }
+
+            100% {
+                filter: brightness(1.3);
+            }
+
+        }
+
+
+        /* =========================
+           TEMPAT PETIR
+        ========================= */
+
+        #lightning-container {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            z-index: -5;
+
+            pointer-events: none;
+
+        }
+
+
+        /* SVG PETIR */
+
+        .lightning {
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            overflow: visible;
+
+        }
+
+
+        /* PETIR UTAMA */
+
+        .lightning .main {
+
+            fill: none;
+
+            stroke: white;
+
+            stroke-width: 3;
+
+            stroke-linecap: round;
+
+            stroke-linejoin: round;
+
+            filter:
+                drop-shadow(0 0 4px white)
+                drop-shadow(0 0 10px red)
+                drop-shadow(0 0 20px red)
+                drop-shadow(0 0 40px red);
+
+        }
+
+
+        /* CABANG PETIR */
+
+        .lightning .branch {
+
+            fill: none;
+
+            stroke: #ffdddd;
+
+            stroke-width: 1.5;
+
+            stroke-linecap: round;
+
+            filter:
+                drop-shadow(0 0 5px red)
+                drop-shadow(0 0 15px red);
+
+        }
+
+
+        /* =========================
+           FLASH
+        ========================= */
+
+        #flash {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(255, 0, 0, 0.18);
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            z-index: 100;
+
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+
+            width: 90%;
+
+            margin: 25px auto;
+
+            padding: 20px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #000,
+                    #222
+                );
+
+            border: 2px solid red;
+
+            border-radius: 50px;
+
+            box-shadow:
+                0 0 20px rgba(225, 0, 0, 0.5);
+
+        }
+
+
+        header h1 {
+
+            color: red;
+
+            font-size: 30px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* =========================
+           GARIS
+        ========================= */
+
+        hr {
+
+            width: 90%;
+
+            margin: 20px auto;
+
+            border: none;
+
+            border-top: 1px solid #444;
+
+        }
+
+
+        /* =========================
+           CARD CONTAINER
+        ========================= */
+
+        .cards {
+
+            width: 90%;
+
+            max-width: 1000px;
+
+            margin: 40px auto;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 30px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        /* =========================
+           CARD
+        ========================= */
+
+        .card {
+
+            width: 250px;
+
+            min-height: 180px;
+
+            padding: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #ff000f,
+                    #b80000
+                );
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.5);
+
+            transition: 0.3s;
+
+        }
+
+
+        .card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(225, 0, 0, 0.4);
+
+        }
+
+
+        .card h2 {
+
+            font-size: 21px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .card p {
+
+            font-size: 14px;
+
+            color: #eee;
+
+        }
+
+
+        /* =========================
+           BENEFITS
+        ========================= */
+
+        .benefits {
+
+            width: 90%;
+
+            max-width: 800px;
+
+            margin: 30px auto;
+
+            padding: 25px;
+
+            background: rgba(28, 28, 28, 0.9);
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 0 20px
+                rgba(225, 0, 0, 0.2);
+
+        }
+
+
+        .benefits h3 {
+
+            margin-bottom: 15px;
+
+            color: red;
+
+        }
+
+
+        .benefits li {
+
+            margin: 7px;
+
+        }
+
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .content {
+
+            width: 90%;
+
+            max-width: 900px;
+
+            margin: 40px auto;
+
+            text-align: center;
+
+        }
+
+
+        .content h2 {
+
+            margin-bottom: 25px;
+
+            font-size: 25px;
+
+        }
+
+
+        /* =========================
+           GAMBAR
+        ========================= */
+
+        .content img {
+
+            width: 100%;
+
+            max-width: 600px;
+
+            height: auto;
+
+            display: block;
+
+            margin: auto;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(225, 0, 0, 0.7);
+
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .button {
+
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 14px 35px;
+
+            background: red;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 30px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .button:hover {
+
+            background: #ff3333;
+
+            transform: scale(1.05);
+
+            box-shadow:
+                0 5px 20px
+                rgba(255, 0, 0, 0.5);
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            margin-top: 50px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            background: #050505;
+
+            color: #888;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =========================
+           RESPONSIVE HP
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            header {
+
+                width: 95%;
+
+                padding: 15px;
+
+            }
+
+
+            header h1 {
+
+                font-size: 22px;
+
+            }
+
+
+            .cards {
+
+                width: 95%;
+
+                gap: 20px;
+
+            }
+
+
+            .card {
+
+                width: 100%;
+
+                max-width: 350px;
+
+            }
+
+
+            .content h2 {
+
+                font-size: 21px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+    <div class="storm"></div>
+
+    <div id="lightning-container"></div>
+
+    <div id="flash"></div>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <h1>
+            website penghasil cuan
+        </h1>
+
+    </header>
+
+
+    <hr>
+
+
+    <!-- =========================
+         CARDS
+    ========================== -->
+
+    <section class="cards">
+
+        <div class="card">
+
+            <h2>
+                WEB CUAN TERCEPAT
+            </h2>
+
+            <p>
+                INFORMASI PENAWARAN
+                MENARIK SETIAP HARI
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h2>
+                kejutan di setiap hari
+            </h2>
+
+            <p>
+                promo terbaik
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <hr>
+
+
+    <!-- =========================
+         KEUNTUNGAN
+    ========================== -->
+
+    <section class="benefits">
+
+        <h3>
+            keuntungan
+        </h3>
+
+        <ul>
+
+            <li>
+                info terbaru
+            </li>
+
+            <li>
+                bonus harian
+            </li>
+
+            <li>
+                promo besar
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <hr>
+
+
+    <!-- =========================
+         GAMBAR
+    ========================== -->
+
+    <section class="content">
+
+        <h2>
+            Temukan informasi menarik
+        </h2>
+
+
+        <img
+            src="FSAFSAS.jpg"
+            alt="Banner"
+        >
+
+
+        <br>
+
+
+        <a
+            href="#"
+            class="button"
+        >
+            LIHAT SELENGKAPNYA
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        © 2026 Website Rendang.
+        All Rights Reserved.
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT PETIR
+    ========================== -->
+
+    <script>
+
+        const container =
+            document.getElementById(
+                "lightning-container"
+            );
+
+
+        const flash =
+            document.getElementById(
+                "flash"
+            );
+
+
+        /* =================================
+           MEMBUAT PETIR
+        ================================= */
+
+        function buatPetir() {
+
+            const svg =
+                document.createElementNS(
+                    "http://www.w3.org/2000/svg",
+                    "svg"
+                );
+
+
+            svg.classList.add(
+                "lightning"
+            );
+
+
+            /* POSISI AWAL */
+
+            let x =
+                Math.random() *
+                window.innerWidth;
+
+            let y = -20;
+
+
+            let d =
+                `M ${x} ${y}`;
+
+
+            /*
+                Membuat bentuk petir
+            */
+
+            const jumlah =
+                Math.floor(
+                    window.innerHeight / 45
+                );
+
+
+            for (
+                let i = 0;
+                i < jumlah;
+                i++
+            ) {
+
+                x +=
+                    Math.random() * 140 - 70;
+
+
+                y +=
+                    Math.random() * 45 + 30;
+
+
+                d +=
+                    ` L ${x} ${y}`;
+
+            }
+
+
+            /* PETIR UTAMA */
+
+            const main =
+                document.createElementNS(
+                    "http://www.w3.org/2000/svg",
+                    "path"
+                );
+
+
+            main.setAttribute(
+                "d",
+                d
+            );
+
+
+            main.classList.add(
+                "main"
+            );
+
+
+            svg.appendChild(
+                main
+            );
+
+
+            /* =================================
+               CABANG PETIR
+            ================================= */
+
+            const jumlahCabang =
+                Math.floor(
+                    Math.random() * 5
+                ) + 3;
+
+
+            for (
+                let i = 0;
+                i < jumlahCabang;
+                i++
+            ) {
+
+                let bx =
+                    Math.random() *
+                    window.innerWidth;
+
+
+                let by =
+                    Math.random() *
+                    window.innerHeight *
+                    0.8;
+
+
+                let branchD =
+                    `M ${bx} ${by}`;
+
+
+                for (
+                    let j = 0;
+                    j < 4;
+                    j++
+                ) {
+
+                    bx +=
+                        Math.random() * 100 - 50;
+
+
+                    by +=
+                        Math.random() * 40 + 20;
+
+
+                    branchD +=
+                        ` L ${bx} ${by}`;
+
+                }
+
+
+                const branch =
+                    document.createElementNS(
+                        "http://www.w3.org/2000/svg",
+                        "path"
+                    );
+
+
+                branch.setAttribute(
+                    "d",
+                    branchD
+                );
+
+
+                branch.classList.add(
+                    "branch"
+                );
+
+
+                svg.appendChild(
+                    branch
+                );
+
+            }
+
+
+            /* MASUKKAN KE WEBSITE */
+
+            container.appendChild(
+                svg
+            );
+
+
+            /* =================================
+               EFEK KILAT
+            ================================= */
+
+            flash.style.opacity = "0.9";
+
+
+            setTimeout(() => {
+
+                flash.style.opacity = "0";
+
+            }, 80);
+
+
+            setTimeout(() => {
+
+                flash.style.opacity = "0.4";
+
+            }, 130);
+
+
+            setTimeout(() => {
+
+                flash.style.opacity = "0";
+
+            }, 220);
+
+
+            /* =================================
+               PETIR HILANG
+            ================================= */
+
+            setTimeout(() => {
+
+                svg.remove();
+
+            }, 800);
+
+        }
+
+
+        /* =================================
+           PETIR ACAK
+        ================================= */
+
+        function petirAcak() {
+
+            const waktu =
+                Math.random() * 3500 + 1500;
+
+
+            setTimeout(() => {
+
+                buatPetir();
+
+                petirAcak();
+
+            }, waktu);
+
+        }
+
+
+        /* MULAI */
+
+        petirAcak();
+
+    </script>
+
+
+</body>
+
 </html>
