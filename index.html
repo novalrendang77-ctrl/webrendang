@@ -9,6 +9,21 @@
 
     <style>
 
+        .logo {
+            display: block;
+            width: 300px;
+            margin: 20px auto;
+        }
+
+        .logo {
+            display: block;
+            width: 300px;
+            max-width: 90%;
+            height: auto;
+            margin: 20px auto;
+        }
+
+
         * {
             margin: 0;
             padding: 0;
@@ -537,6 +552,74 @@
 
         }
 
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+
+            background-color: black;
+            padding: 20px;
+            border-bottom: 3px solid gold;
+        }
+
+        .logo {
+            width: 220px;
+            height: auto;
+
+            animation: LogoGerak 2s ease-in-out infinite;
+        }
+
+        .judul-area {
+            text-align: left;
+        }
+
+        .judul {
+            color: gold;
+            font-size: 40px;
+            margin: 0;
+
+            text-shadow: 0 0 10px gold;
+        }
+
+        .judul-area p {
+            color: white;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        @keyframes LogoGerak {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .logo {
+                width: 100px;
+            }
+
+            .judul-area {
+                text-align: center;
+            }
+
+            .judul {
+                font-size: 28px;
+            }
+        }
+
+
     </style>
 
 </head>
@@ -544,6 +627,20 @@
 
 <body>
 
+
+    <img class="logo"src="logo.png" alt="Logo Bandar Darat">
+    <header class="header">
+
+        <div class="logo-area">
+            <img src="logo.png" alt="Bandar Darat" class="logo">
+        </div>
+        <div class="judul-area">
+            <h1 class="judul">WEBSITE PENGHASIL CUAN</h1>
+            <p>INFORMASI MENARIK SETIAP HARI</p>
+        </div>
+    </header>
+
+    <hr>
 
     <!-- =========================
          BACKGROUND
@@ -936,6 +1033,7 @@
         /* MULAI */
 
         petirAcak();
+
 
     </script>
 
